@@ -1,7 +1,6 @@
 // Require the necessary discord.js classes
 const { Client, GatewayIntentBits, Partials } = require('discord.js');
-const { token, userId } = require('./config.json');
-const botId = '1003351783525073026';
+const { token, userId} = require('./config.json');
 const client = new Client({
 	intents: [
 	  GatewayIntentBits.DirectMessages,
