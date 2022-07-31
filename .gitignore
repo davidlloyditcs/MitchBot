@@ -1,2 +1,1 @@
-#ignore .env which has token
-.env
+config.json

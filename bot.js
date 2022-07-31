@@ -1,12 +1,14 @@
 require("dotenv").config();
-const {Client, Intents} = require("discord.js");
-const client = new Client{{
-    Intents:[
-        Intents.FLAGS.GUILDS,
-        Intents.FLAGS.GUILD_MESSAGES
-    ]
-}};
-client.once("ready", () => {
+const Discord = require('discord.js');
+const client = new Client({intents: ['GUILDS', 'GUILD_MESSAGES']});
+
+client.on("ready", () => {
     console.log("BOT IS ONLINE");
-})
-client.login(process.env.TOKEN);
+});
+
+client.on('message', msg => {
+    if (msg.content === 'ping') {
+        msg.reply('Pong!');
+    }
+});
+client.login(process.env.DISCORD_TOKEN);
