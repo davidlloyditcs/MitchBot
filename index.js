@@ -1,6 +1,6 @@
 // Require the necessary discord.js classes
 const { Client, GatewayIntentBits, Partials } = require('discord.js');
-const { token } = require('./config.json');
+const { token, userId } = require('./config.json');
 const botId = '1003351783525073026';
 const client = new Client({
 	intents: [
@@ -19,7 +19,7 @@ client.on("ready", () => {
 
 client.on('messageCreate', async (message) => {
 	console.log(message);
-	if(message.author.id === '566724468488011818'){
+	if(message.author.id === userId){
 		message.channel.send("Shut up mall boy");
 	}
 });
