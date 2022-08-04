@@ -1,5 +1,5 @@
 const EventEmitter = require('events');
-const callMitchellBad = require('../../index');
+const discordBot = require('../../index');
 const { summonerName } = require('../../config.json')
 let deathCount = 0;
 
@@ -45,7 +45,7 @@ class EventPoller  {
                 if(obj.EventName == 'ChampionKill' && obj.VictimName == summonerName){
                     //add 1 to deathCount so we can pass the correct message to the callMitchellBad function in index.js
                     deathCount = deathCount + 1;
-                    callMitchellBad.callMitchellBad(deathCount);
+                    discordBot.callMitchellBad(deathCount);
                 }
             });
         }, 1000);

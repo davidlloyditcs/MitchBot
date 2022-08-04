@@ -11,11 +11,10 @@ const poller = new EventPoller(gameClient);
 poller.start();
 
 
-this.interval = setInterval(async () => {
-    poller.subscribe((data) => {
-        JSON.stringify({
-            eventType: 'new_event', data
-        });
+poller.subscribe((data) => {
+    JSON.stringify({
+        eventType: 'new_event', data
     });
-}, 1000)
+});
+
 
