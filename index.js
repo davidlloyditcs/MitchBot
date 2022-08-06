@@ -3,6 +3,9 @@ const { Client, GatewayIntentBits, Partials } = require('discord.js');
 const { token, mitchellId, davId, testGeneralChat} = require('./config.json');
 const messages = require('./riot-api/src/messages.json');
 
+//We have this require here so we can start both index.js AND app.js in one go
+const app = require('./riot-api/src/app');
+
 const client = new Client({
 	intents: [
 	  GatewayIntentBits.DirectMessages,
