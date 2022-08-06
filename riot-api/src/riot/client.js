@@ -1,4 +1,3 @@
-
 class GameClient {
     constructor (httpClient) {
         this.httpClient = httpClient;
